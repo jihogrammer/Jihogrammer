@@ -1,4 +1,8 @@
-### Hi there 👋
+### 안녕하세요
+
+1일 1커밋 힘드네요.
+
+코로나가 하루 빨리 종식되었으면 좋겠습니다.
 
 <!--
 **Jihogrammer/Jihogrammer** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
