@@ -1,8 +1,9 @@
-### 안녕하세요
+### Hello!
 
-1일 1커밋 힘드네요.
+###### SSAFY 5기 광주 4반 김지호
 
-코로나가 하루 빨리 종식되었으면 좋겠습니다.
+동두천에서 광주로 이사하느라 너무 정신이 없었다.  
+내일부터 더 열심히 살아야지.
 
 <!--
 **Jihogrammer/Jihogrammer** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
