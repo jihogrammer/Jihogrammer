@@ -17,3 +17,4 @@
   1. `@JsonCreator && @JsonProperty`
   2. `@Builder && @JsonDeserialize`
   3. `ObjectMapper` customizing
+- [ ] redis cluster setting in docker - [link](https://velog.io/@backtony/Spring-Redis-Cluster-구축-및-연동하기)
