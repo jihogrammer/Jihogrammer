@@ -25,35 +25,41 @@
     <tbody>
       <tr>
         <td>
-          <pre id="random"></pre>
+          <pre id="random-poetry-lines"></pre>
         </td>
       </tr>
     </tbody>
   </table>
   <pre id="random" class="mermaid"></pre>
 
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.0/dist/mermaid.min.js"></script>
   <script>
     fetch('sources/basic-flow-chart.mermaid')
       .then(res => res.text())
-      .then(text => document.getElementById("basic-flow-chart").innerText = text)
+      .then(text => {
+        console.log({text})
+        const script = text.replace("<br>", "");
+        document.getElementById("basic-flow-chart").innerText = script;
+      })
       .catch(e => {
         console.error(e);
-        document.getElementById("basic-flow-chart").innerText = "failed to render";
+        document.getElementById("basic-flow-chart").innerText = "flowchart LR\n  hello --> world";
       });
 
     fetch('https://poetrydb.org/random')
       .then(res => res.json())
       .then(result => {
         const poetry = result[0];
+
+        console.log({...poetry});
         document.getElementById("random-poetry-title").innerText = poetry["title"];
         document.getElementById("random-poetry-author").innerText = poetry["author"];
         document.getElementById("random-poetry-lines").innerText = poetry["lines"].join('\n');
       })
       .catch(e => {
         console.error(e);
-        document.getElementById("random-poetry-title").innerText = "failed to get a poe";
+        document.getElementById("random-poetry-title").innerText = "failed to get a poetry";
       });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.0/dist/mermaid.min.js"></script>
 </body>
 </html>
