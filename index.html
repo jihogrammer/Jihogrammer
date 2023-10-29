@@ -10,13 +10,42 @@
     <li><a href="articles/redis-cluster-docker-compose-and-spring-boot">redis-cluster-docker-compose-and-spring-boot</a></li>
   </ul>
 
+  <pre id="basic-flow-chart" class="mermaid"></pre>
 
-  <pre class="mermaid">
-    flowchart LR
-    Jihogrammer --> development
-    Jihogrammer --> retrieval
-  </pre>
+  <h3>Random Potery</h3>
+  <table>
+    <thead>
+      <tr>
+        <th id="random-poetry-title"></th>
+      </tr>
+      <tr>
+        <th id="random-poetry-author"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <pre id="random"></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pre id="random" class="mermaid"></pre>
 
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.0/dist/mermaid.min.js"></script>
+  <script>
+    fetch('sources/basic-flow-chart.mermaid')
+      .then(res => res.text())
+      .then(text => document.getElementById("basic-flow-chart").innerText(text));
+
+    fetch('https://poetrydb.org/random')
+      .then(res => res.json())
+      .then(result => {
+        const poetry = result[0];
+        document.getElementById("random-poetry-title").innerText(poetry["title"])
+        document.getElementById("random-poetry-author").innerText(poetry["author"])
+        document.getElementById("random-poetry-lines").innerText(poetry["lines"].join('\n'))
+      });
+  </script>
 </body>
 </html>
