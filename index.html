@@ -10,7 +10,13 @@
     <li><a href="articles/redis-cluster-docker-compose-and-spring-boot">redis-cluster-docker-compose-and-spring-boot</a></li>
   </ul>
 
-  <pre id="basic-flow-chart" class="mermaid"></pre>
+  <h3>Memaid Diagram</h3>
+  <pre id="basic-flow-chart" class="mermaid">
+    flowchart LR
+      jihogrammer --&gt; development
+      jihogrammer --&gt; retrieval
+  </pre>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.0/dist/mermaid.min.js"></script>
 
   <h3>Random Potery</h3>
   <table>
@@ -33,18 +39,6 @@
   <pre id="random" class="mermaid"></pre>
 
   <script>
-    fetch('sources/basic-flow-chart.mermaid')
-      .then(res => res.text())
-      .then(text => {
-        console.log({text})
-        const script = text.replace("<br>", "");
-        document.getElementById("basic-flow-chart").innerText = script;
-      })
-      .catch(e => {
-        console.error(e);
-        document.getElementById("basic-flow-chart").innerText = "flowchart LR\n  hello --> world";
-      });
-
     fetch('https://poetrydb.org/random')
       .then(res => res.json())
       .then(result => {
@@ -60,6 +54,5 @@
         document.getElementById("random-poetry-title").innerText = "failed to get a poetry";
       });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.0/dist/mermaid.min.js"></script>
 </body>
 </html>
