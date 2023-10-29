@@ -36,15 +36,23 @@
   <script>
     fetch('sources/basic-flow-chart.mermaid')
       .then(res => res.text())
-      .then(text => document.getElementById("basic-flow-chart").innerText(text));
+      .then(text => document.getElementById("basic-flow-chart").innerText = text)
+      .catch(e => {
+        console.error(e);
+        document.getElementById("basic-flow-chart").innerText = "failed to render";
+      });
 
     fetch('https://poetrydb.org/random')
       .then(res => res.json())
       .then(result => {
         const poetry = result[0];
-        document.getElementById("random-poetry-title").innerText(poetry["title"])
-        document.getElementById("random-poetry-author").innerText(poetry["author"])
-        document.getElementById("random-poetry-lines").innerText(poetry["lines"].join('\n'))
+        document.getElementById("random-poetry-title").innerText = poetry["title"];
+        document.getElementById("random-poetry-author").innerText = poetry["author"];
+        document.getElementById("random-poetry-lines").innerText = poetry["lines"].join('\n');
+      })
+      .catch(e => {
+        console.error(e);
+        document.getElementById("random-poetry-title").innerText = "failed to get a poe";
       });
   </script>
 </body>
