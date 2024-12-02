@@ -1,0 +1,13 @@
+{
+  "name": "jihogrammer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "node ./tools/build.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

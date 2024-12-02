@@ -1,0 +1,9 @@
+{
+  "name": "articles",
+  "files": [
+    {
+      "type": "file",
+      "name": "test.md"
+    }
+  ]
+}
