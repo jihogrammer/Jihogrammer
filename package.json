@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npx serve .",
+    "start": "npm start build && npx serve build",
     "build": "node ./tools/build.mjs"
   },
   "keywords": [],

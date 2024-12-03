@@ -17,14 +17,14 @@ const appendChildTo = (el, parentPath, dir) => {
 };
 
 const getArticles = () => {
-  const el = document.getElementById("article-list");
-
-  fetch("/jihogrammer/articles/index.json")
+  fetch(`${document.CONTEXT}/articles/index.json`)
     .then((response) => response.json())
     .then((articles) => {
-      appendChildTo(document.getElementById("article-list"), "/jihogrammer", articles);
+      appendChildTo(document.getElementById("article-list"), document.CONTEXT, articles);
     })
     .catch((e) => console.error("Failed to get html", e));
 };
 
-(() => getArticles())();
+export const run = () => {
+  getArticles();
+};
