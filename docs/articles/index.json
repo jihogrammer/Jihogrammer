@@ -1,0 +1,12 @@
+{
+  "type": "dir",
+  "name": "articles",
+  "path": "docs/articles",
+  "files": [
+    {
+      "type": "file",
+      "path": "docs/articles/test.md",
+      "name": "test.md"
+    }
+  ]
+}
