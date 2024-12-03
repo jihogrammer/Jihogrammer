@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <title>Jihogrammer</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./index.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Jihogrammer</h1>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <title>Jihogrammer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <header>
+    <h1>Jihogrammer</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="./articles">Articles</a></li>
+    </ul>
+  </nav>
+  <main id="container"></main>
 
-    <main>
-      Some contents.
-    </main>
-  </body>
+  <script>
+    const container = document.getElementById("container");
+
+    fetch("./articles")
+      .then((response) => response.text())
+      .then((html) => {
+        const articleDocs = new DOMParser().parseFromString(html, "text/html");
+        const articles = articleDocs.querySelectorAll("a");
+        const article = articles.item(Math.random() * articles.length);
+        const href = "./articles/" + article.href.split("/").pop();
+        return fetch(href);
+      })
+      .then((response) => response.text())
+      .then((html) => container.innerHTML = html)
+      .catch((e) => {
+        console.error("Failed to fetch a random article.", e);
+        container.textContent("Some contents.");
+      })
+  </script>
+</body>
 </html>

@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   size: 1rem;
+  list-style: none;
+  text-decoration: none;
+  color: black;
 }
 body {
   display: flex;
@@ -17,6 +20,9 @@ h2 {
 }
 h3 {
   size: 1.5rem;
+}
+a:hover {
+  color: blue;
 }
 
 header {
