@@ -10,6 +10,13 @@ const appendChildTo = (el, parentPath, dir) => {
 
       a.textContent = `${file.name}`;
       a.href = `${parentPath}/${dir.name}/${file.name}`;
+
+      if (a.href.endsWith(".md")) {
+        console.log(a.href);
+        a.href = a.href.replace(/\.md$/, "");
+        console.log(a.href);
+      }
+
       e.appendChild(a);
       el.appendChild(e);
     }
@@ -17,14 +24,13 @@ const appendChildTo = (el, parentPath, dir) => {
 };
 
 const getArticles = () => {
-  fetch(`${document.CONTEXT}/articles/index.json`)
+  const ul = document.getElementById("article-list");
+  fetch(`./articles/index.json`)
     .then((response) => response.json())
-    .then((articles) => {
-      appendChildTo(document.getElementById("article-list"), document.CONTEXT, articles);
-    })
+    .then((articles) => appendChildTo(ul, '', articles))
     .catch((e) => console.error("Failed to get html", e));
 };
 
-export const run = () => {
+(() => {
   getArticles();
-};
+})();
