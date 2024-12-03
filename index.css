@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  size: 1rem;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  size: 3rem;
+}
+h2 {
+  size: 2.25rem;
+}
+h3 {
+  size: 1.5rem;
+}
+
+header {
+  margin: 3rem 0;
+}
