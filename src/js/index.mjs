@@ -9,7 +9,7 @@ const appendChildTo = (el, parentPath, dir) => {
       const a = document.createElement("a");
 
       a.textContent = `${file.name}`;
-      a.href = `${parentPath}/${dir.name}/${file.name}`;
+      a.href = `./${parentPath}/${dir.name}/${file.name}`;
 
       if (a.href.endsWith(".md")) {
         console.log(a.href);

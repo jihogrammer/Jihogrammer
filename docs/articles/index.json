@@ -4,6 +4,18 @@
   "path": "docs/articles",
   "files": [
     {
+      "type": "dir",
+      "path": "docs/articles/sub",
+      "name": "sub",
+      "files": [
+        {
+          "type": "file",
+          "path": "docs/articles/sub/HelloWorld.md",
+          "name": "HelloWorld.md"
+        }
+      ]
+    },
+    {
       "type": "file",
       "path": "docs/articles/test.md",
       "name": "test.md"
