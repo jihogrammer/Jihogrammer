@@ -30,7 +30,11 @@
         return fetch(href);
       })
       .then((response) => response.text())
-      .then((html) => container.innerHTML = html)
+      .then((html) => {
+        const article = new DOMParser().parseFromString(html, "text/html");
+        article.querySelectorAll("nav").forEach((el) => el.remove());
+        container.innerHTML = article.querySelector("html").outerHTML;
+      })
       .catch((e) => {
         console.error("Failed to fetch a random article.", e);
         container.textContent("Some contents.");
