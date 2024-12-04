@@ -24,7 +24,7 @@
       .then((response) => response.text())
       .then((html) => {
         const articleDocs = new DOMParser().parseFromString(html, "text/html");
-        const articles = articleDocs.querySelectorAll("a");
+        const articles = articleDocs.querySelectorAll("a.article");
         const article = articles.item(Math.random() * articles.length);
         const href = "./articles/" + article.href.split("/").pop();
         return fetch(href);
