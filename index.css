@@ -1,9 +1,14 @@
+@font-face {
+  font-family: noto-serif;
+  src: url(./assets/fonts/NotoSerifKR-Regular.ttf);
+}
 * {
   margin: 0;
   padding: 0;
   size: 1rem;
   list-style: none;
   color: inherit;
+  font-family: "noto-serif", serif;
 }
 body {
   display: flex;
